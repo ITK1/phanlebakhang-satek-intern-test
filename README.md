@@ -18,4 +18,4 @@ Dự án được xây dựng như một phần của bài kiểm tra năng lự
 ## 🛠️ Hướng dẫn cài đặt và chạy Local
 1. Clone dự án:
    ```bash
-   git clone [Link-GitHub-Của-Bạn]
+   git clone https://github.com/ITK1/phanlebakhang-satek-intern-test.git
