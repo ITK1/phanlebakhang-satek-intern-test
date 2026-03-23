@@ -5,7 +5,7 @@ import { isOverdue } from "./utils/helpers";
 function App() {
   // --- 1. STATE & LOCALSTORAGE ---
   const [tasks, setTasks] = useState(() => {
-    const saved = localStorage.getItem("khang_satek_v1");
+    const saved = localStorage.getItem("khang");
     return saved ? JSON.parse(saved) : [];
   });
   const [text, setText] = useState("");
@@ -13,7 +13,7 @@ function App() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    localStorage.setItem("khang_satek_v1", JSON.stringify(tasks));
+    localStorage.setItem("khang", JSON.stringify(tasks));
   }, [tasks]);
 
   // --- 2. LOGIC NGHIỆP VỤ ---
@@ -41,7 +41,6 @@ function App() {
     }
   };
 
-  // Cấu hình các nút bấm động cho từng cột (Ghi điểm Clean Code)
   const getButtons = (currentStatus) => {
     const config = [
       {
@@ -68,14 +67,10 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-900 p-4 md:p-10 text-slate-100 font-sans">
       <div className="max-w-6xl mx-auto">
-        {/* --- HEADER & STATS --- */}
         <header className="mb-8 flex flex-col md:flex-row justify-between items-center bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700 gap-6">
           <div>
             <h1 className="text-3xl font-black text-blue-400 tracking-tight">
-              SATEK{" "}
-              <span className="text-slate-500 font-light">
-                Trang Quản Lý Công Việc Cá Nhân
-              </span>
+              Trang Quản Lý Công Việc Cá Nhân{" "}
             </h1>
             <p className="text-slate-400 text-sm">
               Quản lý công việc - Intern Test [2026]
